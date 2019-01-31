@@ -70,8 +70,28 @@ class Factomos {
         $response = $this->get('/invoices/'.$invoice_pid.'/pdf');
         return $response->getBody();
     }
+    
 
+    /* ESTIMATE */
+    public function listEstimates($url = '/estimates',  $body){
+        $response = $this->get($url, $body);
+        return json_decode((string)$response->getBody());
+    }
 
+    public function createEstimate($body){
+        $response = $this->post('/estimates', $body);
+        return json_decode((string)$response->getBody());
+    }
+
+    public function getEstimate($estimate_pid){
+        $response = $this->get('/estimates/'.$estimate_pid);
+        return json_decode((string)$response->getBody());
+    }
+
+    public function getEstimatePDF($estimate_pid){
+        $response = $this->get('/estimates/'.$estimate_pid.'/pdf');
+        return $response->getBody();
+    }
 
 
     /// CONTACT
