@@ -79,6 +79,11 @@ class Factomos {
         $response = $this->get('/contacts/'.$contact_pid);
         return json_decode((string)$response->getBody());
     }
+    
+    public function deleteContact($contact_pid){
+        $response = $this->delete('/contacts/'.$contact_pid);
+        return json_decode((string)$response->getBody());
+    }
 
     public function createContact($body){
         $response = $this->post('/contacts', $body);
