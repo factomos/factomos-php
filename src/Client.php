@@ -59,6 +59,13 @@ class Client {
     }
 
 
+    /* ARTICLES */
+    public function listArticles($url = '/articles'){
+        $response = $this->get($url);
+        return json_decode((string)$response->getBody());
+    }
+
+
     /* INVOICE */
     public function listInvoices($url = '/invoices'){
         $response = $this->get($url);
