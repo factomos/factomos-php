@@ -19,7 +19,7 @@ class Client {
     public function __construct($params) {
 
         // default values
-        $this->factomos_api_version = 'v1';
+        $this->factomos_api_version = '1';
         $this->factomos_api_url = 'https://api.factomos.com';
 
         if(isset($params['FACTOMOS_API_VERSION'])) {
