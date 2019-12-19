@@ -12,18 +12,28 @@ class Client {
 
     public $client;
     public $factomos_api_version;
-    public $factomos_api_domain;
+    public $factomos_api_url;
     public $factomos_api_token;
     public $headers;
 
     public function __construct($params) {
 
-        $this->factomos_api_version = $params['FACTOMOS_API_VERSION'];
-        $this->factomos_api_domain = $params['FACTOMOS_API_DOMAIN'];
+        // default values
+        $this->factomos_api_version = 'v1';
+        $this->factomos_api_url = 'https://api.factomos.com';
+
+        if(isset($params['FACTOMOS_API_VERSION'])) {
+            $this->factomos_api_version = $params['FACTOMOS_API_VERSION'];
+        }
+
+        if(isset($params['FACTOMOS_API_URL'])) {
+            $this->factomos_api_url = $params['FACTOMOS_API_URL'];
+        }
+
         $this->factomos_api_token = $params['FACTOMOS_API_TOKEN'];
 
         $this->client = new GuzzleHttp\Client([
-            'base_uri' => $this->factomos_api_domain,
+            'base_uri' => $this->factomos_api_url,
         ]);
         $this->headers = [
             'Accept' => 'application/vnd.status+json; version=' . $this->factomos_api_version,
@@ -51,8 +61,8 @@ class Client {
 
 
     /* INVOICE */
-    public function listInvoices($url = '/invoices',  $body){
-        $response = $this->get($url, $body);
+    public function listInvoices($url = '/invoices'){
+        $response = $this->get($url);
         return json_decode((string)$response->getBody());
     }
 
@@ -73,8 +83,8 @@ class Client {
     
 
     /* ESTIMATE */
-    public function listEstimates($url = '/estimates',  $body){
-        $response = $this->get($url, $body);
+    public function listEstimates($url = '/estimates'){
+        $response = $this->get($url);
         return json_decode((string)$response->getBody());
     }
 
