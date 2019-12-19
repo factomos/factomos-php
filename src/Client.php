@@ -50,8 +50,6 @@ class Client {
 
 
 
-
-
     /* INVOICE */
     public function listInvoices($url = '/invoices',  $body){
         $response = $this->get($url, $body);
