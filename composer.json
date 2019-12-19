@@ -1,0 +1,25 @@
+{
+  "name": "factomos/factomos-php",
+  "type": "library",
+  "description": "PHP library for the Factomos API.",
+  "keywords": ["invoicing","invoice","billing", "accounting"],
+  "homepage": "https://github.com/factomos/factomos-php",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Grégoire Fournel",
+      "email": "g@factomos.com",
+      "homepage": "https://factomos.com",
+      "role": "Cofounder & CTO"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.0",
+    "guzzlehttp/guzzle": "^6.5"
+  },
+  "autoload": {
+    "psr-0": {
+      "Factomos": "src"
+    }
+  }
+}

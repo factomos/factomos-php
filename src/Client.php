@@ -2,10 +2,13 @@
 
 /**
  * Class Client
- * v 1.0.2 - 2016-06-13
+ * v 1.1.0 - 2019-12-19
  * @package Factomos
  */
-class Factomos {
+
+namespace Factomos;
+
+class Client {
 
     public $client;
     public $factomos_api_version;
