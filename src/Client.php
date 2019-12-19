@@ -31,7 +31,6 @@ class Client {
             'Content-Length' => 0,
 
         ];
-
     }
 
     public function get($url, $body = false) {
