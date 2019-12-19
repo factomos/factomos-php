@@ -32,7 +32,7 @@ class Client {
 
         $this->factomos_api_token = $params['FACTOMOS_API_TOKEN'];
 
-        $this->client = new GuzzleHttp\Client([
+        $this->client = new \GuzzleHttp\Client([
             'base_uri' => $this->factomos_api_url,
         ]);
         $this->headers = [
