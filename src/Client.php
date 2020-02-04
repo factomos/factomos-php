@@ -115,8 +115,8 @@ class Client {
         $response = $this->get('/contacts/'.$contact_pid);
         return json_decode((string)$response->getBody());
     }
-    public function getContactBySiret($siret){
-        $response = $this->get('/contacts?siret='.$siret);
+    public function listContacts($keyword = ''){
+        $response = $this->get('/contacts?keyword='.urlencode($keyword));
         return json_decode((string)$response->getBody());
     }
     
