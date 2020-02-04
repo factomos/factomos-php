@@ -2,7 +2,7 @@
 
 /**
  * Class Client
- * v 1.1.1 - 2019-12-19
+ * v 1.0.4 - 2019-12-19
  * @package Factomos
  */
 
