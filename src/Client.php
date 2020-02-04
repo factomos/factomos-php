@@ -2,7 +2,7 @@
 
 /**
  * Class Client
- * v 1.1.0 - 2019-12-19
+ * v 1.1.1 - 2019-12-19
  * @package Factomos
  */
 
@@ -113,6 +113,10 @@ class Client {
     /// CONTACT
     public function getContact($contact_pid){
         $response = $this->get('/contacts/'.$contact_pid);
+        return json_decode((string)$response->getBody());
+    }
+    public function getContactBySiret($siret){
+        $response = $this->get('/contacts?siret='.$siret);
         return json_decode((string)$response->getBody());
     }
     
