@@ -18,8 +18,8 @@
     "guzzlehttp/guzzle": "^6.4"
   },
   "autoload": {
-    "psr-0": {
-      "Factomos": "src"
+    "psr-4": {
+      "Factomos\\": "src/factomos/"
     }
   }
 }
