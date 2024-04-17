@@ -24,7 +24,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 $factomosApiToken = 'my-api-token';
 
-$factomosClient = new Factomos\Client([
+$factomosClient = new Factomos\ApiClient([
     'FACTOMOS_API_TOKEN' => $factomosApiToken,
 ]);
 
