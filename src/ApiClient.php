@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Class Client
+ * Class ApiClient
  * v 1.0.4 - 2019-12-19
  * @package Factomos
  */
 
 namespace Factomos;
 
-class Client {
+class ApiClient {
 
     public $client;
     public $factomos_api_version;
