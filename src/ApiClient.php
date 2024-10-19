@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Class ApiClient
+ * Class Client
  * v 1.0.4 - 2019-12-19
  * @package Factomos
  */
 
 namespace Factomos;
 
-class ApiClient {
+class Client {
 
     public $client;
     public $factomos_api_version;
@@ -50,6 +50,11 @@ class ApiClient {
 
     public function post($url, $body = false) {
         $response = $this->client->request('POST', $url, ['headers' => $this->headers, 'json' => $body]);
+        return $response;
+    }
+
+    public function put($url, $body = false) {
+        $response = $this->client->request('PUT', $url, ['headers' => $this->headers, 'json' => $body]);
         return $response;
     }
 
@@ -127,6 +132,11 @@ class ApiClient {
 
     public function createContact($body){
         $response = $this->post('/contacts', $body);
+        return json_decode((string)$response->getBody());
+    }
+
+    public function updateContact($contact_pid, $body){
+        $response = $this->put('/contacts/'.$contact_pid, $body);
         return json_decode((string)$response->getBody());
     }
 
